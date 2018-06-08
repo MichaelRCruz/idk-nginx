@@ -14,7 +14,7 @@ Point your browser to [nginx.org](http://nginx.org/en/download.html) and downloa
 version using `curl` or `wget`. At the time of this tutorial, we will be using nginx-1.15.0.tar.gz.  
 
 ```console
-michael@dtla:~$ sudo wget http://nginx.org/download/nginx-1.15.0.tar.gz
+michael@dtla:~$ wget http://nginx.org/download/nginx-1.15.0.tar.gz
 ```
 
 #### Extract tarball.
@@ -37,7 +37,7 @@ michael@dtla:~/nginx-1.15.0$ ./configure
 
 #### Install PCRE library for regex, gzip, https, etc.
 ```console
-michael@dtla:~/nginx-1.15.0$ sudo apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
+michael@dtla:~/nginx-1.15.0$ apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
 ```
 
 #### Run configuration again.
@@ -98,7 +98,7 @@ michael@dtla:~/nginx-1.15.0$ make
 
 #### Install compiled source.
 ```console
-michael@dtla:~/nginx-1.15.0$ sudo make install
+michael@dtla:~/nginx-1.15.0$ make install
 ```
 
 #### Check locations.
