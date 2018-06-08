@@ -8,7 +8,7 @@ including 3rd party modules which can only be included at compile time.
 However, you do miss out on the convenience of security updates with little  
 effort.
 
-##### Download NGINX.
+#### Download NGINX.
 
 Point your browser to [nginx.org](http://nginx.org/en/download.html) and download the current mainline, stable, or legacy  
 version using `curl` or `wget`. At the time of this tutorial, we will be using nginx-1.15.0.tar.gz.  
@@ -17,12 +17,12 @@ version using `curl` or `wget`. At the time of this tutorial, we will be using n
 michael@dtla:~$ sudo wget http://nginx.org/download/nginx-1.15.0.tar.gz
 ```
 
-##### Extract tarball.
+#### Extract tarball.
 ```console
 michael@dtla:~$ tar -zxvf nginx-1.15.0.tar.gz
 ```
 
-##### Configure source code for the build (first attempt).
+#### Configure source code for the build (first attempt).
 
 ```console
 michael@dtla:~/nginx-1.15.0$ ./configure
@@ -35,12 +35,12 @@ michael@dtla:~/nginx-1.15.0$ ./configure
   statically from the source with nginx by using --with-pcre=<path> option.
 ```
 
-##### Install PCRE library for regex, gzip, https, etc.
+#### Install PCRE library for regex, gzip, https, etc.
 ```console
 michael@dtla:~/nginx-1.15.0$ sudo apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
 ```
 
-##### Run configuration again.
+#### Run configuration again.
 ```console
 michael@dtla:~/nginx-1.15.0$ ./configure
 
@@ -65,7 +65,7 @@ michael@dtla:~/nginx-1.15.0$ ./configure
   nginx http uwsgi temporary files: "uwsgi_temp"
   nginx http scgi temporary files: "scgi_temp"
 ```
-##### Reconfigure configuration and set common flags.
+#### Reconfigure configuration and set common flags.
 ```console
 michael@dtla:~/nginx-1.15.0$ ./configure
 
@@ -91,17 +91,17 @@ michael@dtla:~/nginx-1.15.0$ ./configure
   nginx http scgi temporary files: "scgi_temp"
 ```
 
-##### Compile configuration source.
+#### Compile configuration source.
 ```console
 michael@dtla:~/nginx-1.15.0$ make
 ```
 
-##### Install compiled source.
+#### Install compiled source.
 ```console
 michael@dtla:~/nginx-1.15.0$ sudo make install
 ```
 
-##### Check locations.
+#### Check locations.
 ```console
 michael@dtla:~/nginx-1.15.0$ ls -l /etc/nginx/
 
@@ -124,7 +124,7 @@ michael@dtla:~/nginx-1.15.0$ ls -l /etc/nginx/
   -rw-r--r-- 1 root root 3610 Jun  6 21:44 win-utf
 ```
 
-##### Check for nginx executable and see breakdown of configuration.
+#### Check for nginx executable and see breakdown of configuration.
 ```console
 michael@dtla:~/nginx-1.15.0$ nginx -V
 
