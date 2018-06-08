@@ -9,19 +9,20 @@ However, you do miss out on the convenience of security updates with little
 effort.
 
 ##### Download NGINX.
+
 Point your browser to [nginx.org](http://nginx.org/en/download.html) and download the current mainline, stable, or legacy  
 version using `curl` or `wget`. At the time of this tutorial, we will be using nginx-1.15.0.tar.gz.  
 
-```bash
+```console
 michael@dtla:~$ sudo wget http://nginx.org/download/nginx-1.15.0.tar.gz```
 
 ##### Extract tarball.
-```bash
+```console
 michael@dtla:~$ tar -zxvf nginx-1.15.0.tar.gz```
 
 ##### Configure source code for the build (first attempt).
 
-```bash
+```console
 michael@dtla:~/nginx-1.15.0$ ./configure
 
 ...
@@ -32,12 +33,12 @@ michael@dtla:~/nginx-1.15.0$ ./configure
   statically from the source with nginx by using --with-pcre=<path> option.```
 
 ##### Install PCRE library for regex, gzip, https, etc.
-```bash
+```console
 michael@dtla:~/nginx-1.15.0$ sudo apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
 ```
 
 ##### Run configuration again.
-```bash
+```console
 michael@dtla:~/nginx-1.15.0$ ./configure
 
 ...
@@ -62,7 +63,7 @@ michael@dtla:~/nginx-1.15.0$ ./configure
   nginx http scgi temporary files: "scgi_temp"
 ```
 ##### Reconfigure configuration and set common flags.
-```bash
+```console
 michael@dtla:~/nginx-1.15.0$ ./configure
 
 ...
@@ -87,15 +88,15 @@ michael@dtla:~/nginx-1.15.0$ ./configure
   nginx http scgi temporary files: "scgi_temp"```
 
 ##### Compile configuration source.
-```bash
+```console
 michael@dtla:~/nginx-1.15.0$ make```
 
 ##### Install compiled source.
-```bash
+```console
 michael@dtla:~/nginx-1.15.0$ sudo make install```
 
 ##### Check locations.
-```bash
+```console
 michael@dtla:~/nginx-1.15.0$ ls -l /etc/nginx/
 
 ...
@@ -117,7 +118,7 @@ michael@dtla:~/nginx-1.15.0$ ls -l /etc/nginx/
   -rw-r--r-- 1 root root 3610 Jun  6 21:44 win-utf```
 
 ##### Check for nginx executable and see breakdown of configuration.
-```bash
+```console
 michael@dtla:~/nginx-1.15.0$ nginx -V
 
 ...
