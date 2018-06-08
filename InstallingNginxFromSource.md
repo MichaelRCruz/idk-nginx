@@ -10,7 +10,7 @@ effort.
 
 ##### Download NGINX.
 Point your browser to [nginx.org](http://nginx.org/en/download.html) and download the current mainline, stable, or legacy  
-version using ```curl``` or ```wget```. At the time of this tutorial, we will be using nginx-1.15.0.tar.gz.  
+version using `curl` or `wget`. At the time of this tutorial, we will be using nginx-1.15.0.tar.gz.  
 
 ```bash
 michael@dtla:~$ sudo wget http://nginx.org/download/nginx-1.15.0.tar.gz```
