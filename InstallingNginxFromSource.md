@@ -14,11 +14,13 @@ Point your browser to [nginx.org](http://nginx.org/en/download.html) and downloa
 version using `curl` or `wget`. At the time of this tutorial, we will be using nginx-1.15.0.tar.gz.  
 
 ```console
-michael@dtla:~$ sudo wget http://nginx.org/download/nginx-1.15.0.tar.gz```
+michael@dtla:~$ sudo wget http://nginx.org/download/nginx-1.15.0.tar.gz
+```
 
 ##### Extract tarball.
 ```console
-michael@dtla:~$ tar -zxvf nginx-1.15.0.tar.gz```
+michael@dtla:~$ tar -zxvf nginx-1.15.0.tar.gz
+```
 
 ##### Configure source code for the build (first attempt).
 
@@ -30,7 +32,8 @@ michael@dtla:~/nginx-1.15.0$ ./configure
   ./configure: error: the HTTP rewrite module requires the PCRE library.
   You can either disable the module by using --without-http_rewrite_module
   option, or install the PCRE library into the system, or build the PCRE library
-  statically from the source with nginx by using --with-pcre=<path> option.```
+  statically from the source with nginx by using --with-pcre=<path> option.
+```
 
 ##### Install PCRE library for regex, gzip, https, etc.
 ```console
@@ -85,15 +88,18 @@ michael@dtla:~/nginx-1.15.0$ ./configure
   nginx http proxy temporary files: "proxy_temp"
   nginx http fastcgi temporary files: "fastcgi_temp"
   nginx http uwsgi temporary files: "uwsgi_temp"
-  nginx http scgi temporary files: "scgi_temp"```
+  nginx http scgi temporary files: "scgi_temp"
+```
 
 ##### Compile configuration source.
 ```console
-michael@dtla:~/nginx-1.15.0$ make```
+michael@dtla:~/nginx-1.15.0$ make
+```
 
 ##### Install compiled source.
 ```console
-michael@dtla:~/nginx-1.15.0$ sudo make install```
+michael@dtla:~/nginx-1.15.0$ sudo make install
+```
 
 ##### Check locations.
 ```console
@@ -115,7 +121,8 @@ michael@dtla:~/nginx-1.15.0$ ls -l /etc/nginx/
   -rw-r--r-- 1 root root  636 Jun  6 21:44 scgi_params.default
   -rw-r--r-- 1 root root  664 Jun  6 21:44 uwsgi_params
   -rw-r--r-- 1 root root  664 Jun  6 21:44 uwsgi_params.default
-  -rw-r--r-- 1 root root 3610 Jun  6 21:44 win-utf```
+  -rw-r--r-- 1 root root 3610 Jun  6 21:44 win-utf
+```
 
 ##### Check for nginx executable and see breakdown of configuration.
 ```console
@@ -127,4 +134,5 @@ michael@dtla:~/nginx-1.15.0$ nginx -V
   built by gcc 7.2.0 (Ubuntu 7.2.0-8ubuntu3.2)
   built with OpenSSL 1.0.2g  1 Mar 2016
   TLS SNI support enabled
-  configure arguments: --sbin-path=/usr/bin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log//nginx/access.log --with-pcre --pid-path=/var/run/nginx.pid --with-http_ssl_module```
+  configure arguments: --sbin-path=/usr/bin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log//nginx/access.log --with-pcre --pid-path=/var/run/nginx.pid --with-http_ssl_module
+```
