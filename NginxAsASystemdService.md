@@ -1,5 +1,5 @@
 # Add NGINX as a Systemd Service
-\*for versions of Ubuntu >
+\*for versions of Ubuntu > 15.0.4
 
 Here you configure NGINX as a systemd service. This will allow you to start, stop, restart, and reload NGINX in a more standard way. More importantly it will allow you to start NGINX on boot. You can enable this by copying a simple script copied from the NGINX website.
 
