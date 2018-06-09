@@ -45,7 +45,7 @@ http://<ip address>/helloworld?foo=bar
 ...
 
 <your ip address>
-/inspect
+/helloworld
 foo=bar
 ```
 #### Create Variation of `$args` Variable
