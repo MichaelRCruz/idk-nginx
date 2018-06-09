@@ -1,6 +1,6 @@
 # Location Blocks
 
-The following four location blocks will provide a clear example of their usage and allude to the power of their utility.
+The following five location blocks will provide a clear example of their usage and allude to the power of their utility.
 
 ### Prefix Match
 Matches a URI starting with `/sup` followed by a short list of valid URIs.
@@ -33,7 +33,7 @@ location = /sup {
 ...
 ```
 ### REGEX Match - case sensitive
-Matches URIs based on regular expression using the tilde character.
+Matches URIs based on regular expression using the "tilde" character.
 ```nginx
 ...
 
@@ -48,7 +48,7 @@ location ~ /sup[0-7] {
 The regular expression above will match any URI with `/sup` with an appended number, `/sup3`.
 
 ### REGEX Match - case insensitive
-Matches URIs based on regular expression using an asterisk and a tilde character followed by a short list of valid URIs.
+Matches URIs based on regular expression using an "asterisk" and a "tilde" character followed by a short list of valid URIs.
 ```nginx
 ...
 
@@ -64,7 +64,7 @@ location ~* /sup[0-7] {
 * `/sup7`
 
 ### Preferential Prefix Match
-Note there is a default assignment to each location match modifier with a regular expression taking priority over a prefix match. You can supersede the regular expression match with the following example using the carrot tilde.
+Note there is a default assignment to each location match modifier with a regular expression taking priority over a prefix match. You can supersede the regular expression match with the following example using the "carrot" and "tilde".
 
 ```nginx
 ...
