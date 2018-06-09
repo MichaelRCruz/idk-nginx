@@ -29,7 +29,7 @@ events {}
 http {
   server {
     listen 80;
-    server_name 192.168.86.31;
+    server_name <ip address>;
     root /sites/nginx-demo;
   }
 }
@@ -86,7 +86,7 @@ http {
 #  }
   server {
     listen 80;
-    server_name 192.168.86.31;
+    server_name <ip address>;
     root /sites/nginx-demo;
   }
 }
