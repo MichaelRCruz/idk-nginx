@@ -14,18 +14,18 @@ Point your browser to [nginx.org](http://nginx.org/en/download.html) and downloa
 version using `curl` or `wget`. At the time of this tutorial, we will be using nginx-1.15.0.tar.gz.  
 
 ```console
-michael@dtla:~$ wget http://nginx.org/download/nginx-1.15.0.tar.gz
+~$ wget http://nginx.org/download/nginx-1.15.0.tar.gz
 ```
 
 #### Extract tarball.
 ```console
-michael@dtla:~$ tar -zxvf nginx-1.15.0.tar.gz
+~$ tar -zxvf nginx-1.15.0.tar.gz
 ```
 
 #### Configure source code for the build (first attempt).
 
 ```console
-michael@dtla:~/nginx-1.15.0$ ./configure
+~/nginx-1.15.0$ ./configure
 
 ...
 
@@ -37,12 +37,12 @@ michael@dtla:~/nginx-1.15.0$ ./configure
 
 #### Install PCRE library for regex, gzip, https, etc.
 ```console
-michael@dtla:~/nginx-1.15.0$ apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
+~/nginx-1.15.0$ apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
 ```
 
 #### Run configuration again.
 ```console
-michael@dtla:~/nginx-1.15.0$ ./configure
+~/nginx-1.15.0$ ./configure
 
 ...
 
@@ -67,7 +67,7 @@ michael@dtla:~/nginx-1.15.0$ ./configure
 ```
 #### Reconfigure configuration and set common flags.
 ```console
-michael@dtla:~/nginx-1.15.0$ ./configure
+~/nginx-1.15.0$ ./configure
 
 ...
 
@@ -93,17 +93,17 @@ michael@dtla:~/nginx-1.15.0$ ./configure
 
 #### Compile configuration source.
 ```console
-michael@dtla:~/nginx-1.15.0$ make
+~/nginx-1.15.0$ make
 ```
 
 #### Install compiled source.
 ```console
-michael@dtla:~/nginx-1.15.0$ make install
+~/nginx-1.15.0$ make install
 ```
 
 #### Check locations.
 ```console
-michael@dtla:~/nginx-1.15.0$ ls -l /etc/nginx/
+~/nginx-1.15.0$ ls -l /etc/nginx/
 
 ...
 
@@ -126,7 +126,7 @@ michael@dtla:~/nginx-1.15.0$ ls -l /etc/nginx/
 
 #### Check for nginx executable and see breakdown of configuration.
 ```console
-michael@dtla:~/nginx-1.15.0$ nginx -V
+~/nginx-1.15.0$ nginx -V
 
 ...
 
