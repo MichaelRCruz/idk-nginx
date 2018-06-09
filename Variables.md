@@ -61,7 +61,7 @@ location /helloworld {
 ```
 Restart NGINX and point your browser to the below example and notice the variable we defined has been returned.
 ```text
-http://<ip address>/inspect?name=tupac
+http://<ip address>/helloworld?name=tupac
 
 ...
 
@@ -85,9 +85,6 @@ if ( $arg_apikey != 123 ) {
 
 #### Set Own Variables in NGINX
 Modify your `nginx.conf` as below noting that the module variable, `$date`, will hold an ISO date/time string with the `$mon` variable defined above the conditional.
-
-will hold an ISO date/time string
-
 ```nginx
 ...
 
