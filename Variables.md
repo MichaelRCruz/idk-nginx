@@ -27,6 +27,7 @@ http {
     location /helloworld {
       return 200 "$host\n$uri\n$args";
     }
+  }
 
 ```
 Point your browser to the two URLs below for an understanding of NGINX variables. Note the behavior of `$args`. This is the query parameter variable and by itself it contains the entire query parameter string.
