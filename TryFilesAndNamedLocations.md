@@ -33,7 +33,7 @@ Below, the NGINX variable, `$uri`, has been added as the first argument to the `
   try_files $uri /non_existent.png /sup /example_404;
 
   location /example_404 {
-    return 404 "Sorry, my dude. This doesn't exist."
+    return 404 "Sorry, my dude. This doesn't exist.";
   }
 
   location /sup {
@@ -71,7 +71,7 @@ Named locations are simple in that they allow a name assigned to a location cont
   try_files $uri /non_existent.png /sup @example_404;
 
   location @example_404 {
-    return 404 "Sorry, my dude. This doesn't exist."
+    return 404 "Sorry, my dude. This doesn't exist.";
   }
 
   location /sup {
