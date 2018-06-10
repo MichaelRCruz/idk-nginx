@@ -5,7 +5,7 @@ The return statement in the location directive takes a status code and response 
 
 `return 200 "Hello, world.";`  
 
-If the status code is in the three-hundred range, then the behavior of the return statement changes in that it accepts a URI as a second parameter. This now is the path in which the client is redirected.
+If the status code is in the three-hundred range, then the behavior of the return statement changes in that it accepts a URI as a second parameter. The second parameter being the path the client is being directed.
 
 `return 307 /foo/bar;`
 
@@ -15,7 +15,6 @@ Assuming you have an image asset of some kind, say `thumb.png`, and that asset l
 #### Simple Redirect
 Below is a simple example of how you can redirect your client to an asset at the root path.  
 
-`http://<ip_address>/logo`
 ```nginx
 ...
 
@@ -29,6 +28,7 @@ http {
     server_name <ip_address>;
     root /sites/nginx-demo;
 
+    # http://<ip_address>/logo
     location /logo {
       return 307 /thumb.png;
     }
@@ -53,7 +53,7 @@ location /sup {
 
 ...
 ```
-It's important to note here that a rewrite mutates the URI _internally_ which is not visible to the client. The browser is pointing to `http://<ip_address>/foo/anything`, but NGINX is serving what is returned by the prefix match, `/sup`.
+It's important to note here that a rewrite mutates the URI _internally_ which is not visible to the client. The URL is displayed as `http://<ip_address>/foo/anything`, but NGINX is serving what is returned by the prefix match, `/sup`.
 
 #### Capture Groups
 With capture groups you can "capture" parts of the original URI. The second argument of the rewrite directive contains the variable, `$1`. Notice how the value of that variable can be returned by both the prefix match and the exact match.
