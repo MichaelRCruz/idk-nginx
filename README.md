@@ -4,3 +4,4 @@
 4. Location Blocks
 5. Variables
 6. Rewrites and Redirects
+7. Try Files and Named Locations
