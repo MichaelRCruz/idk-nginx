@@ -1,7 +1,7 @@
 # Try Files and Named Locations
 `try_files` is a unique NGINX directive in that it can be used inside the `server` context or a `location` context. With this directive, NGINX will search for a resource in any specified locations relative to the root directory. These specified locations exist as arguments for the `try_files` directive with the last argument resulting in a rewrite and reevaluation.
 
-```console
+```nginx
 events {}
 
 http {
@@ -27,7 +27,7 @@ In the example above, `try_files` sits within the `server` context which applies
 #### `try_files` With NGINX Variables
 Below, the NGINX variable, `$uri`, has been added as the first argument to the `try_files` directive and another location context has been added as well. Remember, the value of `$uri` is [defined](http://nginx.org/en/docs/http/ngx_http_core_module.html#var_uri) by the current URI in request.
 
-```console
+```nginx
 ...
 
   try_files $uri /non_existent.png /sup /example_404;
@@ -65,7 +65,7 @@ curl -I http://<ip_address>/bill_and_teds_excellent_adventure
 #### Named Locations
 
 Named locations are simple in that they allow a name assigned to a location context. Below the `@example_404` being the argument that is assigned to the named location, `location @example_404`.
-```console
+```nginx
 ...
 
   try_files $uri /non_existent.png /sup @example_404;
