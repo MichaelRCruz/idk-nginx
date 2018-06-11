@@ -149,3 +149,6 @@ http {
 ...
 
 ```
+
+### Conclusion
+This document exemplifies the basic nature of NGINX – a proxy server. The browser sent a request to NGINX, which then communicated that to the PHP fpm service, the request was processed, sent back to NGINX, and then sent back to the client.
