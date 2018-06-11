@@ -81,11 +81,11 @@ http {
   }
 }
 ```
-`index` is a standard NGINX directive that tells NGINX where to go if the request points to a directory. Simply put, if  `index.php` does not exist in the directory, then `index.html` will be served as the default index instead. The first prefix match (location block) handles all possible requests for any static assets with a `try_files` directive. The last location block makes use of the fastCGI protocol. There are plenty of [fastCGI resources](https://www.digitalocean.com/community/tutorials/understanding-and-implementing-fastcgi-proxying-in-nginx) to get up-to-speed with this technology, but in short, it is how NGINX will communicate with php-fpm.  
+`index` is a standard NGINX directive that tells NGINX where to go if the request points to a directory. Simply put, if  `index.php` does not exist in the directory, then `index.html` will be served as the default index instead. The first location block (prefix match) handles all possible requests for any static assets with a `try_files` directive. The last location block makes use of the fastCGI protocol. There are plenty of [fastCGI resources](https://www.digitalocean.com/community/tutorials/understanding-and-implementing-fastcgi-proxying-in-nginx) to get up-to-speed with this technology, but in short, it is how NGINX will communicate with php-fpm.  
 
 
 ### FastCGI and Unix Sockets
-The second location block will include the `fastcgi.conf` file similar to how the http parent directive has included the `mime.types` file. Both files live in the same location hence their relative patha as the only argument for `include`. The fastCGI file was configured at the time of NGINX's installation and can be found as follows.
+The second location block will include the `fastcgi.conf` file similar to how the http parent directive has included the `mime.types` file. Both files live in the same location hence their relative paths as the only argument for `include`. The fastCGI file was configured at the time of NGINX's installation and can be found as follows.
 
 ```console
 # ls -l /etc/nginx/fastcgi.conf
