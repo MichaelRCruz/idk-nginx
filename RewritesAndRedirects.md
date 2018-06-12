@@ -11,7 +11,8 @@ If the status code is in the three-hundred range, then the behavior of the retur
 
 Assuming you have an image asset of some kind, say `thumb.png`, and that asset lives at the root path, NGINX will serve that asset by pointing your browser to the following location.  
 
-`http://<ip_address>/thumb.png`
+`http://198.51.100.0/thumb.png`
+
 #### Simple Redirect
 Below is a simple example of how you can redirect your client to an asset at the root path.  
 
@@ -25,10 +26,10 @@ http {
   server {
 
     listen 80;
-    server_name <ip_address>;
+    server_name 198.51.100.0;
     root /sites/nginx-demo;
 
-    # http://<ip_address>/logo
+    # http://198.51.100.0/logo
     location /logo {
       return 307 /thumb.png;
     }
@@ -36,14 +37,14 @@ http {
 
 ...
 ```
-Notice, however, that the browser will take the client to `http://<ip_address>/thumb.png`. This is the main difference between rewrites and redirects.
+Notice, however, that the browser will take the client to `http://198.51.100.0/thumb.png`. This is the main difference between rewrites and redirects.
 
 #### Rewrite With Regular Expression
 The following `nginx.conf` file contains a rewrite directive just above `location`. This rewrite directive takes two arguments. The first argument being a regular expression which can be read as, "Starting with `foo` and more than one word character". The second argument of the rewrite directive, `/sup`, will be the new URI to rewrite this to.
 ```nginx
 ...
 
-# http://<ip_address>/foo/anything
+# http://198.51.100.0/foo/anything
 
 rewrite ^/foo/\w+ /sup;
 
@@ -53,7 +54,7 @@ location /sup {
 
 ...
 ```
-It's important to note here that a rewrite mutates the URI _internally_ which is not visible to the client. The URL is displayed as `http://<ip_address>/foo/anything`, but NGINX is serving what is returned by the prefix match, `/sup`.
+It's important to note here that a rewrite mutates the URI _internally_ which is not visible to the client. The URL is displayed as `http://198.51.100.0/foo/anything`, but NGINX is serving what is returned by the prefix match, `/sup`.
 
 #### Capture Groups
 With capture groups you can "capture" parts of the original URI. The second argument of the rewrite directive contains the variable, `$1`. Notice how the value of that variable can be returned by both the prefix match and the exact match.
@@ -61,8 +62,8 @@ With capture groups you can "capture" parts of the original URI. The second argu
 ```console
 ...
 
-# http://<ip_address>/foo/anything
-# http://<ip_address>/foo/dude
+# http://198.51.100.0/foo/anything
+# http://198.51.100.0/foo/dude
 
 rewrite ^/foo/(\w+) /sup/$1;
 
@@ -85,7 +86,7 @@ Below is an example of an optional flag that can be used to tell NGINX to stop r
 ```console
 ...
 
-# http://<ip_address>/foo/scooter
+# http://198.51.100.0/foo/scooter
 
 rewrite ^/foo/(\w+) /sup/$1;
 rewrite ^/sup/scooter /thumb.png;
@@ -108,7 +109,7 @@ However, if you include an optional flag, `last`, then this will tell NGINX to s
 ```console
 ...
 
-# http://<ip_address>/foo/scooter
+# http://198.51.100.0/foo/scooter
 
 rewrite ^/foo/(\w+) /sup/$1 last;
 

@@ -10,22 +10,21 @@ effort.
 
 #### Download NGINX.
 
-Point your browser to [nginx.org](http://nginx.org/en/download.html) and download the current mainline, stable, or legacy  
-version using `curl` or `wget`. At the time of this tutorial, we will be using nginx-1.15.0.tar.gz.  
+Point your browser to [nginx.org](http://nginx.org/en/download.html) and download the current mainline, stable, or legacy version using `curl` or `wget`. At the time of this tutorial, we will be using nginx-1.15.0.tar.gz.
 
 ```console
-~$ wget http://nginx.org/download/nginx-1.15.0.tar.gz
+# wget http://nginx.org/download/nginx-1.15.0.tar.gz
 ```
 
 #### Extract tarball.
 ```console
-~$ tar -zxvf nginx-1.15.0.tar.gz
+# tar -zxvf nginx-1.15.0.tar.gz
 ```
 
 #### Configure source code for the build (first attempt).
 
 ```console
-~/nginx-1.15.0$ ./configure
+~/nginx-1.15.0# ./configure
 
 ...
 
@@ -37,12 +36,12 @@ version using `curl` or `wget`. At the time of this tutorial, we will be using n
 
 #### Install PCRE library for regex, gzip, https, etc.
 ```console
-~/nginx-1.15.0$ apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
+~/nginx-1.15.0# apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
 ```
 
 #### Run configuration again.
 ```console
-~/nginx-1.15.0$ ./configure
+~/nginx-1.15.0# ./configure
 
 ...
 
@@ -67,7 +66,7 @@ version using `curl` or `wget`. At the time of this tutorial, we will be using n
 ```
 #### Reconfigure configuration and set common flags.
 ```console
-~/nginx-1.15.0$ ./configure
+~/nginx-1.15.0# ./configure
 
 ...
 
@@ -93,17 +92,17 @@ version using `curl` or `wget`. At the time of this tutorial, we will be using n
 
 #### Compile configuration source.
 ```console
-~/nginx-1.15.0$ make
+~/nginx-1.15.0# make
 ```
 
 #### Install compiled source.
 ```console
-~/nginx-1.15.0$ make install
+~/nginx-1.15.0# make install
 ```
 
 #### Check locations.
 ```console
-~/nginx-1.15.0$ ls -l /etc/nginx/
+~/nginx-1.15.0# ls -l /etc/nginx/
 
 ...
 
@@ -126,7 +125,7 @@ version using `curl` or `wget`. At the time of this tutorial, we will be using n
 
 #### Check for nginx executable and see breakdown of configuration.
 ```console
-~/nginx-1.15.0$ nginx -V
+~/nginx-1.15.0# nginx -V
 
 ...
 

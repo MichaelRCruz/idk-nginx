@@ -9,7 +9,7 @@ http {
 
   server {
     listen 80;
-    server_name <ip_address>;
+    server_name 198.51.100.0;
 
     root /sites/nginx-demo;
 
@@ -42,7 +42,7 @@ Below, the NGINX variable, `$uri`, has been added as the first argument to the `
 
 ...
 ```
-If a request is made with the above configuration for a resource that does not exist, say `http://<ip_address>/bill_and_teds_excellent_adventure`, then NGINX will take the following steps in order. Pay special attention to step 3.
+If a request is made with the above configuration for a resource that does not exist, say `http://198.51.100.0/bill_and_teds_excellent_adventure`, then NGINX will take the following steps in order. Pay special attention to step 3.
 
 1. Look for the `$uri` as it is, `/sites/nginx-demo/bill_and_teds_excellent_adventure` which doesn't exist thus moving on to the next argument.
 2. Look for the asset at the location, `/sites/nginx-demo/non_existent.png` which doesn't exist thus moving on to the next argument.
@@ -52,7 +52,7 @@ If a request is made with the above configuration for a resource that does not e
 Check the status code using curl as below.
 
 ```console
-curl -I http://<ip_address>/bill_and_teds_excellent_adventure
+curl -I http://198.51.100.0/bill_and_teds_excellent_adventure
 
   HTTP/1.1 404 Not Found
   Server: nginx/1.15.0

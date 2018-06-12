@@ -21,7 +21,7 @@ http {
   server {
 
     listen 80;
-    server_name <ip address>;
+    server_name 198.51.100.0;
     root /sites/nginx-demo;
 
     location /helloworld {
@@ -33,19 +33,20 @@ http {
 Point your browser to the two URLs below for an understanding of NGINX variables. Note the behavior of `$args`. This is the query parameter variable and by itself it contains the entire query parameter string.
 
 ```text
-http://<ip address>/helloworld
+http://198.51.100.0/helloworld
 
 ...
 
-<your ip address>
+198.51.100.0
 /helloworld
 ```
+
 ```text
-http://<ip address>/helloworld?foo=bar
+http://198.51.100.0/helloworld?foo=bar
 
 ...
 
-<your ip address>
+198.51.100.0
 /helloworld
 foo=bar
 ```
@@ -62,7 +63,7 @@ location /helloworld {
 ```
 Restart NGINX and point your browser to the below example and notice the variable we defined has been returned.
 ```text
-http://<ip address>/helloworld?name=tupac
+http://198.51.100.0/helloworld?name=tupac
 
 ...
 
@@ -72,7 +73,7 @@ Name: tupac
 #### Conditionals
 Modify your `nginx.conf` to reflect the changes below. The conditional has been placed _outside_ of the location context as [it is discouraged and considered bad practice otherwise](https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/). The conditional will check for a hypothetical API key in the URI. If the correct API is not provided by the client, an unauthorized status code is returned otherwise `index.html` will be served.
 
-```http://<ip address>?apikey=123```
+```http://198.51.100.0?apikey=123```
 
 ```nginx
 ...

@@ -64,7 +64,7 @@ http {
   server {
 
     listen 80;
-    server_name 167.99.93.26;
+    server_name 198.51.100.0;
     root /sites/demo;
 
     index index.php index.html;
@@ -106,7 +106,7 @@ Before restarting NGINX and testing out the configuration, create a very small P
 echo '<?php phpinfo(); ?>' > /sites/nginx-demo/info.PHP
 ```
 
-First, restart NGINX and point the browser to `http//<ip_address>` to render the original html file. Second, point the browser to `http://<ip_address>/info.php` to match the regex location block. Notice the 502 bad gateway. What do?
+First, restart NGINX and point the browser to `http//<ip_address>` to render the original html file. Second, point the browser to `http://198.51.100.0/info.php` to match the regex location block. Notice the 502 bad gateway. What do?
 
 ### User Permissions With Sockets
 
@@ -114,7 +114,7 @@ Check the error logs for a clue as to what went wrong as follows.
 
 ```console
 # tail -n 1 /var/log/nginx/error.log
-2018/06/10 20:18:38 [crit] 9202#0: *1 connect() to unix:/run/php/php7.1-fpm.sock failed (13: Permission denied) while connecting to upstream, client: 10.0.1.16, server: 192.168.86.31, request: "GET /info.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.1-fpm.sock:", host: "10.0.1.6"
+2018/06/10 20:18:38 [crit] 9202#0: *1 connect() to unix:/run/php/php7.1-fpm.sock failed (13: Permission denied) while connecting to upstream, client: 10.0.1.16, server: 198.51.100.0, request: "GET /info.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.1-fpm.sock:", host: "10.0.1.6"
 ```
 The error gives away the fact that permissions are not configured correctly for the Unix socket. This could be handled by changing file permissions, but there is a more secure way.
 

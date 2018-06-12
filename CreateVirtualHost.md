@@ -22,14 +22,14 @@ This is the file we will modify to service our web application.
 #### Modify the `nginx.conf` file.
 This file is currently serving your default holding page. Replace everything within the http, main, and events context to reflect the code snippet below. Note that although the events context is empty, it is still required for the configuration to be valid. The server context is the new virtual host. NGINX assumes port 80 by default. The server_name will be the location in which the server context exists.
 
-`https://<your domain>:80`
+`https://198.51.100.0:80`
 
 ```nginx
 events {}
 http {
   server {
     listen 80;
-    server_name <ip address>;
+    server_name 198.51.100.0;
     root /sites/nginx-demo;
   }
 }
@@ -40,9 +40,9 @@ http {
 The below command will restart NGINX - bringing in the new server context.
 
 ```console
-  # systemctl restart nginx
+# systemctl restart nginx
 ```
-If the output isn't as expected, then you more than likely have a syntax error in your `nginx.conf` file. You can conveniently check the configuration file manually for errors with the command below. If there are any errors, the output will tell you.
+<!-- If the output isn't as expected, then you more than likely have a syntax error in your `nginx.conf` file. You can conveniently check the configuration file manually for errors with the command below. If there are any errors, the output will tell you. -->
 
 ```console
 # nginx -t
@@ -61,7 +61,7 @@ The application will load fine in the browser except that the css did not render
 Note `Content-Type: text/plain`.
 
 ```console
-# curl -I http://<domain, subdomain, or ip address>/style.css
+# curl -I http://198.51.100.0/style.css
 
   HTTP/1.1 200 OK
   Server: nginx/1.15.0
@@ -86,7 +86,7 @@ http {
 #  }
   server {
     listen 80;
-    server_name <ip address>;
+    server_name 198.51.100.0;
     root /sites/nginx-demo;
   }
 }

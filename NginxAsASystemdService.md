@@ -5,13 +5,13 @@ Here you configure NGINX as a systemd service. This will allow you to start, sto
 
 #### Terminate nginx please.
 ```console
-$ nginx -s stop
+# nginx -s stop
 ```
 ##### Copy script from NGINX website.
 You can find the NGINX init script resource page [here](https://www.nginx.com/resources/wiki/start/topics/examples/initscripts/) and more specifically the example Systemd script [here](https://www.nginx.com/resources/wiki/start/topics/examples/systemd/). Copy the file location.
 
 ```console
-$ touch /lib/systemd/system/nginx.service
+# touch /lib/systemd/system/nginx.service
 ```
 Go ahead and open that new file with vim, nano, etc., and modify the NGINX example script like the one below. The changes include the location of the PID file as well as the NGINX executable.
 
@@ -35,15 +35,17 @@ Go ahead and open that new file with vim, nano, etc., and modify the NGINX examp
 
 #### Start NGINX using systemd.
 ```console
-$ systemctl start NGINX
+# systemctl start NGINX
 ```
 
 #### Check the status of NGINX using Systemd.
 ```console
-$ systemctl status nginx
+# systemctl status nginx
 ```
+
 The output should be like the example below.
-  ```console
+
+```console
   ● nginx.service - The NGINX HTTP and reverse proxy server
      Loaded: loaded (/lib/systemd/system/nginx.service; disabled; vendor preset: enabled)
      Active: active (running) since Wed 2018-06-06 22:57:12 PDT; 1min 50s ago
@@ -61,20 +63,25 @@ The output should be like the example below.
   Jun 06 22:57:12 bae nginx[15393]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
   Jun 06 22:57:12 bae nginx[15393]: nginx: configuration file /etc/nginx/nginx.conf test is successful
   Jun 06 22:57:12 bae systemd[1]: Started The NGINX HTTP and reverse proxy server.
-  ```
+```
 
 Notice the third line of the output will give you the status and the last few lines are a few log messages.
 
 #### Terminate NGINX with Systemd.
+
 ```console
-$ systemctl stop nginx
+# systemctl stop nginx
 ```
+
 #### Configiure NGINX to start on boot.
+
 The command and output are below. This is a one-off command and NGINX will not start on boot.
+
 ```console
-$ systemctl enable nginx
+# systemctl enable nginx
 ```
+
 Output confirming symlink.
-  ```console
-  Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.
-  ```
+```console
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.
+```
