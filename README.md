@@ -5,4 +5,6 @@
 5. Variables
 6. Rewrites and Redirects
 7. Try Files and Named Locations
+8. Logging
+9.
 10. PHP Processing
