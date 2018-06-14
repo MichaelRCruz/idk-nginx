@@ -6,5 +6,6 @@
 6. Rewrites and Redirects
 7. Try Files and Named Locations
 8. Logging
-9. Worker Processes
-10. PHP Processing
+9. PHP Processing
+10. Buffers and Timeouts
+11. Adding Dynamic Modules
