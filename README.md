@@ -7,5 +7,7 @@
 7. Try Files and Named Locations
 8. Logging
 9. PHP Processing
-10. Buffers and Timeouts
-11. Adding Dynamic Modules
+10. Worker Processes
+11. Buffers and Timeouts
+12. Adding Dynamic Modules
+13. Headers and Expires

@@ -180,7 +180,7 @@ http {
 }
 ```
 
-The dynamic module's `image_filter` will rotate the image 90 degress. The `load_module` directive is how to _selectively_ include the module into the NGINX configuration. Notice the file path the specified for the dynamic module via `--modules-path=/etc/nginx/modules`.
+The dynamic module's `image_filter` will rotate the image 90 degress. The `load_module` directive is how to _selectively_ include the module into the NGINX configuration. Notice the file path specified for the dynamic module via `--modules-path=/etc/nginx/modules`.
 
 Reference the [documentation](http://nginx.org/en/docs/http/ngx_http_image_filter_module.html) on this dynamic module for further configuration options.
 
