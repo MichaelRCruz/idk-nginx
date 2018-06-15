@@ -109,7 +109,7 @@ Download the files.
 ...and to show off a little.
 
 ```console
-$ ls -l *.css
+# ls -l *.css
   -rw-r--r--  1 tupac  staff  980 Jun 14 23:32 style.css
   -rw-r--r--  1 tupac  staff  487 Jun 14 23:32 style.min.css
 ```
