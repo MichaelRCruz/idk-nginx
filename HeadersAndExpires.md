@@ -37,7 +37,7 @@ This is the "old school" flavor of `Cache-Control`.
 
 ##### `Vary Accept-Encoding`
 
-This tells the browser that the response can be anything based on the sibling `Accept-Encoding` header.
+This tells the browser that the response can be anything based on the `Accept-Encoding` header.
 
 ##### `expires 60m`
 

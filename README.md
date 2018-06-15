@@ -11,3 +11,4 @@
 11. Buffers and Timeouts
 12. Adding Dynamic Modules
 13. Headers and Expires
+14. Gzip
